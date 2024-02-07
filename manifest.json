@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Lichess Popup Button",
+    "version": "1.0",
+    "description": "Adds the Lichess computer analysis button to a popup.",
+    "permissions":["storage", "declarativeContent", "activeTab", "scripting"],
+    "host_permissions":["https://lichess.org/*"],
+  
+    "icons": {
+      "16": "download.png",
+      "48": "download.png",
+      "128": "download.png"
+    },
+    "action": {
+      "default_title": "Click to view a popup",
+      "default_popup": "popup.html"},
+      "background": {
+        "service_worker" :"analysis.js"
+      },
+
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js":["content.js"]
+        }
+      ]
+  
+  }
+  
